@@ -1,0 +1,6 @@
+
+    Check factorial() table with bc
+    
+    Make meta_chars() handle ~username/
+   
+    getuserinfo(&struct pwent) 

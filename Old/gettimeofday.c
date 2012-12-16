@@ -1,0 +1,72 @@
+/*
+    Copyright (c) 1994-2003, Jason W. Bacon, Acadix Software Systems
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are
+    met:
+
+    Redistributions of source code must retain the above copyright notice,
+    this list of conditions and the following disclaimer. Redistributions
+    in binary form must reproduce the above copyright notice, this list of
+    conditions and the following disclaimer in the documentation and/or
+    other materials provided with the distribution. 
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+    IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+    PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+    LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+    DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+    OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+*/
+
+#if defined(COHERENT)
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/timeb.h>
+#include "bacon.h"
+
+/****************************************************************************
+ * Author: Jason W. Bacon
+ * Acadix Software Systems
+ * http://www.execpc.com/~acadix
+ * acadix@execpc.com
+ *
+ * Arguments:   tv: pointer to timeval structure to be filled
+ *              tz: pointer to timezone structure, or NULL
+ * Return values: Currently always returns 0 for success
+ * Description:
+ *  Crude implementation of gettimeofday function for systems that lack it.
+ *  Works just like the real one, but has a resolution limited to
+ *  1000 microseconds.
+ ****************************************************************************/
+ 
+int     gettimeofday(tv,tz)
+struct timeval *tv;
+struct timezone *tz;
+
+{
+    struct timeb    tb;
+    
+    /* Get time of day the old-fashioned way */
+    ftime(&tb);
+    
+    /* struct timeb has a resolution of milliseconds - adjust */
+    tv->tv_sec = tb.time;
+    tv->tv_usec = tb.millitm * 1000;
+    
+    /* Fill *tz if it isn't NULL */
+    if ( tz != NULL )
+    {
+	tz->tz_minuteswest = tb.timezone;
+	tz->tz_dsttime = tb.dstflag;
+    }
+    return 0;
+}
+#endif
+

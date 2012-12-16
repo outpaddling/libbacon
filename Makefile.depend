@@ -1,0 +1,156 @@
+bc_eval.o: bc_eval.c bacon.h
+	${CC} -c ${CFLAGS} bc_eval.c
+
+check_int_range.o: check_int_range.c bacon.h
+	${CC} -c ${CFLAGS} check_int_range.c
+
+check_param_vals.o: check_param_vals.c bacon.h
+	${CC} -c ${CFLAGS} check_param_vals.c
+
+check_stat.o: check_stat.c bacon.h
+	${CC} -c ${CFLAGS} check_stat.c
+
+cleanup_exit.o: cleanup_exit.c
+	${CC} -c ${CFLAGS} cleanup_exit.c
+
+difftimeday.o: difftimeday.c
+	${CC} -c ${CFLAGS} difftimeday.c
+
+factorial.o: factorial.c bacon.h
+	${CC} -c ${CFLAGS} factorial.c
+
+fast_cp.o: fast_cp.c bacon.h
+	${CC} -c ${CFLAGS} fast_cp.c
+
+fd_purge.o: fd_purge.c
+	${CC} -c ${CFLAGS} fd_purge.c
+
+fgetline.o: fgetline.c
+	${CC} -c ${CFLAGS} fgetline.c
+
+file_mod_cmp.o: file_mod_cmp.c bacon.h
+	${CC} -c ${CFLAGS} file_mod_cmp.c
+
+gcd.o: gcd.c
+	${CC} -c ${CFLAGS} gcd.c
+
+get_home_dir.o: get_home_dir.c bacon.h
+	${CC} -c ${CFLAGS} get_home_dir.c
+
+get_param_code.o: get_param_code.c bacon.h
+	${CC} -c ${CFLAGS} get_param_code.c
+
+getpwinfo.o: getpwinfo.c bacon.h
+	${CC} -c ${CFLAGS} getpwinfo.c
+
+init_debug.o: init_debug.c bacon.h
+	${CC} -c ${CFLAGS} init_debug.c
+
+ltostrn.o: ltostrn.c
+	${CC} -c ${CFLAGS} ltostrn.c
+
+match_files.o: match_files.c bacon.h
+	${CC} -c ${CFLAGS} match_files.c
+
+memicmp.o: memicmp.c bacon.h
+	${CC} -c ${CFLAGS} memicmp.c
+
+meta_chars.o: meta_chars.c bacon.h
+	${CC} -c ${CFLAGS} meta_chars.c
+
+mv.o: mv.c bacon.h
+	${CC} -c ${CFLAGS} mv.c
+
+ncuserid.o: ncuserid.c bacon.h
+	${CC} -c ${CFLAGS} ncuserid.c
+
+num_size.o: num_size.c
+	${CC} -c ${CFLAGS} num_size.c
+
+parse_cmd.o: parse_cmd.c bacon.h
+	${CC} -c ${CFLAGS} parse_cmd.c
+
+polar_distance.o: polar_distance.c
+	${CC} -c ${CFLAGS} polar_distance.c
+
+poly.o: poly.c
+	${CC} -c ${CFLAGS} poly.c
+
+read_double.o: read_double.c bacon.h
+	${CC} -c ${CFLAGS} read_double.c
+
+read_double_matrix.o: read_double_matrix.c bacon.h
+	${CC} -c ${CFLAGS} read_double_matrix.c
+
+read_long.o: read_long.c bacon.h
+	${CC} -c ${CFLAGS} read_long.c
+
+read_long_matrix.o: read_long_matrix.c bacon.h
+	${CC} -c ${CFLAGS} read_long_matrix.c
+
+read_param_name.o: read_param_name.c
+	${CC} -c ${CFLAGS} read_param_name.c
+
+read_param_val.o: read_param_val.c
+	${CC} -c ${CFLAGS} read_param_val.c
+
+read_string.o: read_string.c bacon.h
+	${CC} -c ${CFLAGS} read_string.c
+
+read_string_matrix.o: read_string_matrix.c bacon.h
+	${CC} -c ${CFLAGS} read_string_matrix.c
+
+rint.o: rint.c bacon.h
+	${CC} -c ${CFLAGS} rint.c
+
+rmkdir.o: rmkdir.c bacon.h
+	${CC} -c ${CFLAGS} rmkdir.c
+
+spawnlp.o: spawnlp.c bacon.h
+	${CC} -c ${CFLAGS} spawnlp.c
+
+spawnvp.o: spawnvp.c bacon.h
+	${CC} -c ${CFLAGS} spawnvp.c
+
+strbasecpy.o: strbasecpy.c bacon.h
+	${CC} -c ${CFLAGS} strbasecpy.c
+
+strblank.o: strblank.c
+	${CC} -c ${CFLAGS} strblank.c
+
+strcap.o: strcap.c bacon.h
+	${CC} -c ${CFLAGS} strcap.c
+
+strcasecmp.o: strcasecmp.c bacon.h
+	${CC} -c ${CFLAGS} strcasecmp.c
+
+strcomment.o: strcomment.c bacon.h
+	${CC} -c ${CFLAGS} strcomment.c
+
+strlcat.o: strlcat.c
+	${CC} -c ${CFLAGS} strlcat.c
+
+strlcpy.o: strlcpy.c
+	${CC} -c ${CFLAGS} strlcpy.c
+
+strlower.o: strlower.c bacon.h
+	${CC} -c ${CFLAGS} strlower.c
+
+strptrcmp.o: strptrcmp.c
+	${CC} -c ${CFLAGS} strptrcmp.c
+
+strsep.o: strsep.c
+	${CC} -c ${CFLAGS} strsep.c
+
+strupper.o: strupper.c bacon.h
+	${CC} -c ${CFLAGS} strupper.c
+
+strword.o: strword.c
+	${CC} -c ${CFLAGS} strword.c
+
+usage.o: usage.c bacon.h
+	${CC} -c ${CFLAGS} usage.c
+
+viscpy.o: viscpy.c bacon.h
+	${CC} -c ${CFLAGS} viscpy.c
+
