@@ -41,7 +41,8 @@
 #include <sys/time.h>
 #endif
 
-#if !(defined(FreeBSD) || defined(NetBSD) || defined(OpenBSD) || defined(__APPLE__) || defined(Linux) || defined(linux))
+#if !(defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || \
+    defined(____APPLE____) || defined(__Linux__) || defined(__linux__))
 typedef void (*sig_t)();
 #endif
 
