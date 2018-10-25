@@ -31,6 +31,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sysexits.h>
 #include "bacon.h"
 
 /**
@@ -59,10 +60,10 @@ char    *dest,*src;
     
     /* Open source and destination files for low level transfer */
     if ( (infile = open(src,O_RDONLY)) == -1 )
-	return -1;
+	return EX_NOINPUT;
     
     if ( (outfile = open(dest,O_WRONLY|O_CREAT|O_TRUNC,0700)) == -1 )
-	return -1;
+	return EX_CANTCREAT;
 
     /* Create buffer of optimum size for both files, 64k max
        Optimum buffer size is any multiple of the both sector sizes
