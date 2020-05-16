@@ -29,9 +29,10 @@
 /**********************************************************************
  * Author: Jason W. Bacon
  * Acadix Software Systems
+ * 1990
  **********************************************************************/
 
-#if ! (defined(__FreeBSD__) || defined(__APPLE__))
+#if ! (defined(__FreeBSD__) || defined(__APPLE__) || defined(__NetBSD__))
  
 #include "bacon.h"
 

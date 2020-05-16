@@ -41,7 +41,7 @@
 #include <sys/time.h>
 #endif
 
-#if !(defined(FreeBSD) || defined(NetBSD) || defined(OpenBSD) || defined(__APPLE__) || defined(Linux) || defined(linux))
+#if 0   /* Not sure this is needed anywhere anymore */
 typedef void (*sig_t)();
 #endif
 
@@ -219,10 +219,12 @@ char *strcap(char *dest, char *src, size_t maxlen);
 int strcasecmp(const char *s1, const char *s2);
 /* strcomment.c */
 int strcomment(char *buff, char *starter);
+#ifndef __APPLE__
 /* strlcat.c */
 size_t strlcat(char *dest, const char *src, size_t maxlen);
 /* strlcpy.c */
 size_t strlcpy(char *dest, const char *src, size_t len);
+#endif
 /* strlower.c */
 char *strlower(char *dest, char *src, size_t maxlen);
 /* strptrcmp.c */
