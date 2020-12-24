@@ -64,6 +64,7 @@ OBJS    = \
 # environment, or a command line option such as PREFIX=/opt/local.
 PREFIX      ?= /usr/local
 MANPREFIX   ?= ${PREFIX}
+DESTDIR     ?= .
 
 # Where to find local libraries and headers.  For MacPorts, override
 # with "make LOCALBASE=/opt/local"
@@ -146,18 +147,9 @@ realclean: clean
 # Install all target files (binaries, libraries, docs, etc.)
 
 install: ${LIB}
-	${MKDIR} -p ${PREFIX}/lib ${PREFIX}/include ${PREFIX}/man/man1
-	${INSTALL} -m 0444 ${LIB} ${PREFIX}/lib
+	${MKDIR} -p ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/include \
+	    ${DESTDIR}${PREFIX}/man/man1
+	${INSTALL} -m 0444 ${LIB} ${DESTDIR}${PREFIX}/lib
 	@for file in ${HEADERS}; do \
-	    ${INSTALL} -m 0444 $${file} ${PREFIX}/include; \
+	    ${INSTALL} -m 0444 $${file} ${DESTDIR}${PREFIX}/include; \
 	done
-
-############################################################################
-# Remove all installed files
-
-uninstall:
-	${RM} ${PREFIX}/lib/${LIB}
-	@for file in ${HEADERS}; do \
-	    ${RM} ${PREFIX}/include/$${file}; \
-	done
-
