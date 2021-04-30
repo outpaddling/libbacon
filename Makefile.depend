@@ -76,17 +76,17 @@ polar_distance.o: polar_distance.c
 poly.o: poly.c
 	${CC} -c ${CFLAGS} poly.c
 
-read_double.o: read_double.c bacon.h
-	${CC} -c ${CFLAGS} read_double.c
-
 read_double_matrix.o: read_double_matrix.c bacon.h
 	${CC} -c ${CFLAGS} read_double_matrix.c
 
-read_long.o: read_long.c bacon.h
-	${CC} -c ${CFLAGS} read_long.c
+read_double.o: read_double.c bacon.h
+	${CC} -c ${CFLAGS} read_double.c
 
 read_long_matrix.o: read_long_matrix.c bacon.h
 	${CC} -c ${CFLAGS} read_long_matrix.c
+
+read_long.o: read_long.c bacon.h
+	${CC} -c ${CFLAGS} read_long.c
 
 read_param_name.o: read_param_name.c
 	${CC} -c ${CFLAGS} read_param_name.c
@@ -94,11 +94,11 @@ read_param_name.o: read_param_name.c
 read_param_val.o: read_param_val.c
 	${CC} -c ${CFLAGS} read_param_val.c
 
-read_string.o: read_string.c bacon.h
-	${CC} -c ${CFLAGS} read_string.c
-
 read_string_matrix.o: read_string_matrix.c bacon.h
 	${CC} -c ${CFLAGS} read_string_matrix.c
+
+read_string.o: read_string.c bacon.h
+	${CC} -c ${CFLAGS} read_string.c
 
 rint.o: rint.c bacon.h
 	${CC} -c ${CFLAGS} rint.c

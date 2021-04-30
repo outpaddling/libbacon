@@ -62,9 +62,8 @@ OBJS    = \
 
 # Install in /usr/local, unless defined by the parent Makefile, the
 # environment, or a command line option such as PREFIX=/opt/local.
-PREFIX      ?= /usr/local
+PREFIX      ?= ../local
 MANPREFIX   ?= ${PREFIX}
-DESTDIR     ?= .
 
 # Where to find local libraries and headers.  For MacPorts, override
 # with "make LOCALBASE=/opt/local"
@@ -150,6 +149,6 @@ install: ${LIB}
 	${MKDIR} -p ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/include \
 	    ${DESTDIR}${PREFIX}/man/man1
 	${INSTALL} -m 0444 ${LIB} ${DESTDIR}${PREFIX}/lib
-	@for file in ${HEADERS}; do \
+	for file in ${HEADERS}; do \
 	    ${INSTALL} -m 0444 $${file} ${DESTDIR}${PREFIX}/include; \
 	done
