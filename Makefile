@@ -15,7 +15,6 @@ OBJS    = \
 	match_files.o \
 	memicmp.o \
 	meta_chars.o \
-	mv.o \
 	ncuserid.o \
 	polar_distance.o \
 	poly.o \
