@@ -9,25 +9,14 @@ HEADERS = bacon.h
 
 OBJS    = \
 	bc_eval.o \
-	difftimeday.o \
-	factorial.o \
-	fast_cp.o \
-	fd_purge.o \
-	fgetline.o \
-	file_mod_cmp.o \
-	gcd.o \
-	get_home_dir.o \
 	get_param_code.o \
 	getpwinfo.o \
 	init_debug.o \
-	ltostrn.o \
 	match_files.o \
 	memicmp.o \
 	meta_chars.o \
 	mv.o \
 	ncuserid.o \
-	num_size.o \
-	parse_cmd.o \
 	polar_distance.o \
 	poly.o \
 	read_double.o \
@@ -38,24 +27,9 @@ OBJS    = \
 	read_param_val.o \
 	read_string.o \
 	read_string_matrix.o \
-	rint.o \
-	rmkdir.o \
-	spawnlp.o \
-	spawnvp.o \
-	strbasecpy.o \
-	strblank.o \
 	strcap.o \
-	strcasecmp.o \
 	strcomment.o \
-	strlcat.o \
-	strlcpy.o \
-	strlower.o \
-	strptrcmp.o \
-	strsep.o \
-	strupper.o \
-	strword.o \
-	usage.o \
-	viscpy.o
+	strword.o
 
 ############################################################################
 # Compile, link, and install options
