@@ -30,13 +30,19 @@
 double  polar_distance(double rho1,double theta1,double rho2,double theta2)
 
 {
+    /*
     double  x1 = rho1 * cos(theta1),
 	    y1 = rho1 * sin(theta1),
 	    x2 = rho2 * cos(theta2),
 	    y2 = rho2 * sin(theta2);
+    */
     
     /* Is there a simpler way?  This was converted to polar 
        from pythagorean */
-    return sqrt( (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) );
+    // return sqrt( (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1) );
+    
+    // Faster
+    return sqrt(rho1 * rho1 + rho2 * rho2 - 2.0 * rho1 * rho2
+		    * cos(theta1 - theta2));
 }
 
